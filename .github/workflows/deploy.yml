@@ -25,7 +25,9 @@ jobs:
       - run: cp api/data/decks.json client/public/decks.json
       - run: cd client && npm install && npm run build
         env:
+          GITHUB_PAGES: 'true'
           VITE_API_URL: /api
+      - run: cp client/dist/index.html client/dist/404.html
       - uses: actions/upload-pages-artifact@v3
         with:
           path: client/dist

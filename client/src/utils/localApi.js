@@ -4,7 +4,8 @@ let cache = null;
 
 async function loadData() {
   if (!cache) {
-    const res = await fetch('/decks.json');
+    const base = import.meta.env.BASE_URL || '/';
+    const res = await fetch(`${base}decks.json`);
     cache = await res.json();
   }
   return cache;
