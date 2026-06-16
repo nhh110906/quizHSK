@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: quizhsk
+    runtime: node
+    plan: free
+    buildCommand: npm install && cd api && npm install && npm run build-data && cd ../client && npm install && npm run build
+    startCommand: cd api && npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20.11.0

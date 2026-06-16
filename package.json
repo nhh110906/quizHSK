@@ -1,0 +1,15 @@
+{
+  "name": "quizhsk",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && cd api && npm install && cd ../client && npm install",
+    "build-data": "cd api && npm run build-data",
+    "build": "cd client && npm run build",
+    "start": "cd api && npm start",
+    "dev": "concurrently \"cd api && npm run dev\" \"cd client && npm run dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
